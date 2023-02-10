@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Action } from './pages/Action';
 import { Homepage } from './pages/Homepage';
+import { Quisommesnous } from './pages/Quisommesnous';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -15,6 +16,7 @@ root.render(
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/action' element={<Action />} />
+        <Route path='/quisommesnous' element={<Quisommesnous />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

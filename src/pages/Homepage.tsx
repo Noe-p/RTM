@@ -11,7 +11,7 @@ export function Homepage(props: HomepageProps): JSX.Element {
   return (
     <Layout>
       <Main className={className}>
-        <h1>Homepage</h1>
+        <img src="/assets/page1/Rectangle 9.jpg" alt="banner"/>
       </Main>
     </Layout>
   );
@@ -22,4 +22,10 @@ const Main = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
 `;
