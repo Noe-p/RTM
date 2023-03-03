@@ -15,7 +15,7 @@ export function Header(props: HeaderProps): JSX.Element {
       <Link to='/'>
         <p>Home</p>
       </Link>
-      <Link to='/action'>
+      <Link to='/actions'>
         <p>Action</p>
       </Link>
     </Main>
