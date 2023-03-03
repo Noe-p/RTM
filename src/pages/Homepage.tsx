@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Layout } from '../components/Layout';
+import { SecondBanner } from '../components/SecondBanner';
+import { ActionSection } from '../components/ActionSection';
 
 interface HomepageProps {
   className?: string;
@@ -11,7 +13,9 @@ export function Homepage(props: HomepageProps): JSX.Element {
   return (
     <Layout>
       <Main className={className}>
-        <img src="/assets/page1/Rectangle 9.jpg" alt="banner"/>
+        <img className={"ImageBanner"} src="/assets/page1/Rectangle 9.jpg" alt="banner"/>
+        <SecondBanner/>
+        <ActionSection/>
       </Main>
     </Layout>
   );
@@ -19,11 +23,12 @@ export function Homepage(props: HomepageProps): JSX.Element {
 
 const Main = styled.div`
   display: flex;
+  flex-direction: column;
   flex: 1;
   align-items: center;
   justify-content: center;
   width: 100%;
-  img{
+  .ImageBanner{
     width: 100%;
     height: 400px;
     object-fit: cover;

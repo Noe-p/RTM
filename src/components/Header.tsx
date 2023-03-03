@@ -16,7 +16,7 @@ export function Header(props: HeaderProps): JSX.Element {
         <Link to='/'><p>Nous soutenir</p></Link>
         <Link to='/action'><p>Actions</p></Link>
         <Link to='/quisommesnous'><p>Qui sommes-nous ?</p></Link>
-        <Link to='/'><LastButton >Nous contacter</LastButton ></Link>
+        <Link to='/'><LastButton>Nous contacter</LastButton ></Link>
       </Nav>
     </Main>
   );
@@ -29,7 +29,7 @@ const Main = styled.div`
   justify-content: space-between;
   background-color: #2E2C73;
   width: 100%;
-  height: 300px;
+  height: 548px;
   color: white;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
