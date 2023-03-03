@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { COLORS } from '../styles/constantes';
 
 interface TyposProps {
   children?: ReactNode;
@@ -8,7 +9,7 @@ interface TyposProps {
 }
 
 export function H1(props: TyposProps): JSX.Element {
-  const { children, className, color = 'white' } = props;
+  const { children, className, color = COLORS.BLACK } = props;
 
   return (
     <H1Styled $color={color} className={className}>
@@ -18,7 +19,7 @@ export function H1(props: TyposProps): JSX.Element {
 }
 
 export function H2(props: TyposProps): JSX.Element {
-  const { children, className, color = 'white' } = props;
+  const { children, className, color = COLORS.BLACK } = props;
 
   return (
     <H2Styled $color={color} className={className}>
@@ -28,7 +29,7 @@ export function H2(props: TyposProps): JSX.Element {
 }
 
 export function H3(props: TyposProps): JSX.Element {
-  const { children, className, color = 'white' } = props;
+  const { children, className, color = COLORS.BLACK } = props;
 
   return (
     <H3Styled $color={color} className={className}>
@@ -38,7 +39,7 @@ export function H3(props: TyposProps): JSX.Element {
 }
 
 export function P1(props: TyposProps): JSX.Element {
-  const { children, className, color = 'white' } = props;
+  const { children, className, color = COLORS.BLACK } = props;
 
   return (
     <P1Styled $color={color} className={className}>
@@ -48,7 +49,7 @@ export function P1(props: TyposProps): JSX.Element {
 }
 
 export function P2(props: TyposProps): JSX.Element {
-  const { children, className, color = 'white' } = props;
+  const { children, className, color = COLORS.BLACK } = props;
 
   return (
     <P2Styled $color={color} className={className}>
