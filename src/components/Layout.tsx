@@ -12,7 +12,7 @@ export function Layout(props: LayoutProps): JSX.Element {
 
   return (
     <Main className={className}>
-      <Header />
+      <Header currentPage={window.location.pathname}/>
       {children}
     </Main>
   );
@@ -24,4 +24,5 @@ const Main = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 `;
