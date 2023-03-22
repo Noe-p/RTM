@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLORS } from '../styles/constantes';
@@ -17,12 +16,12 @@ export function ActionCard(props: ActionCardProps): JSX.Element {
   let navigate = useNavigate();
 
   function formatDate(date: Date): string {
-    return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+    return `${date.getDate().toString().padStart(2, '0')}/${(
+      date.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, '0')}/${date.getFullYear()}`;
   }
-
-  useEffect(() => {
-    console.log('TEST', image);
-  }, [image]);
 
   return (
     <Main

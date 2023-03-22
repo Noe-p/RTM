@@ -5,6 +5,7 @@ import { WP_REST_API_Posts } from 'wp-types';
 import { ActionCard } from '../../components/ActionCard';
 import { Layout } from '../../components/Layout';
 import { H1, H2, H3 } from '../../components/Typos';
+import { POST_URL, ROOT_URL } from '../../worpress';
 
 interface ActionsProps {
   className?: string;
@@ -14,6 +15,14 @@ export function Actions(props: ActionsProps): JSX.Element {
   const { className } = props;
   const [posts, setPosts] = useState<WP_REST_API_Posts>([]);
 
+  function getDate(text: string) {
+    const regex = /<p[^>]*>(.*?)<\/p>/g;
+    const match = regex.exec(text);
+    return match
+      ? new Date(match[1].split('/').reverse().join('-'))
+      : new Date();
+  }
+
   function getFirstImage(content: string) {
     const regex = /<img[^>]+src="?([^"\s]+)"?[^>]*>/g;
     const match = regex.exec(content);
@@ -21,30 +30,27 @@ export function Actions(props: ActionsProps): JSX.Element {
   }
 
   function getPosts() {
-    const rootURL = 'http://localhost:10023/wp-json/';
+    const rootURL = ROOT_URL;
     apiFetch.use(apiFetch.createRootURLMiddleware(rootURL));
-    fetch('http://localhost:10023/wp-json/wp/v2/posts')
+    fetch(POST_URL)
       .then((response) => response.json())
       .then((posts) => {
         setPosts(posts as WP_REST_API_Posts);
-        console.log('Action', getFirstImage(posts[0].content.rendered));
       });
   }
 
-  function filterOlderPosts(posts: WP_REST_API_Posts) {
+  function filterPastPost(posts: WP_REST_API_Posts) {
     const today = new Date();
     const filteredPosts = posts.filter((post) => {
-      const postDate = new Date(post.date);
-      return postDate.getDate() < today.getDate();
+      return getDate(post.content.rendered).getDate() < today.getDate();
     });
     return filteredPosts;
   }
 
-  function filterNewerPosts(posts: WP_REST_API_Posts) {
+  function filterFuturPost(posts: WP_REST_API_Posts) {
     const today = new Date();
     const filteredPosts = posts.filter((post) => {
-      const postDate = new Date(post.date);
-      return postDate.getDate() >= today.getDate();
+      return getDate(post.content.rendered).getDate() >= today.getDate();
     });
     return filteredPosts;
   }
@@ -64,25 +70,25 @@ export function Actions(props: ActionsProps): JSX.Element {
         </H3Styled>
         <H2Styled>{'Actions à venir'}</H2Styled>
         <CardContainer>
-          {filterNewerPosts(posts).map((post) => (
+          {filterFuturPost(posts).map((post) => (
             <ActionCard
               idAction={post.id}
               key={post.id}
               title={post.title.rendered}
               image={getFirstImage(post.content.rendered)}
-              date={new Date(post.date)}
+              date={getDate(post.content.rendered)}
             />
           ))}
         </CardContainer>
         <H2Styled>{'Actions passées'}</H2Styled>
         <CardContainer>
-          {filterOlderPosts(posts).map((post) => (
+          {filterPastPost(posts).map((post) => (
             <ActionCard
               idAction={post.id}
               key={post.id}
               title={post.title.rendered}
               image={getFirstImage(post.content.rendered)}
-              date={new Date(post.date)}
+              date={getDate(post.content.rendered)}
             />
           ))}
         </CardContainer>

@@ -1,23 +1,23 @@
 import parse from 'html-react-parser';
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { WP_REST_API_Post } from 'wp-types';
 import { Layout } from '../../components/Layout';
 import { H1, H2, H3, P1 } from '../../components/Typos';
+import { POST_URL } from '../../worpress';
 
 interface ActionProps {
-  children?: ReactNode;
   className?: string;
 }
 
 export function Action(props: ActionProps): JSX.Element {
-  const { children, className } = props;
+  const { className } = props;
   const [post, setPost] = useState<WP_REST_API_Post>();
   const { id } = useParams();
 
   function getPost() {
-    fetch(`http://localhost:10023/wp-json/wp/v2/posts/${id}`)
+    fetch(`${POST_URL}/${id}`)
       .then((response) => response.json())
       .then((data) => setPost(data));
   }
@@ -26,12 +26,12 @@ export function Action(props: ActionProps): JSX.Element {
     getPost();
   }, []);
 
-  useEffect(() => {
-    console.log(post);
-  }, [post]);
-
   function formatDate(date: Date): string {
-    return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+    return `${date.getDate().toString().padStart(2, '0')}/${(
+      date.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, '0')}/${date.getFullYear()}`;
   }
 
   function renderHTMLMarkup(data: any) {
@@ -83,15 +83,29 @@ export function Action(props: ActionProps): JSX.Element {
     }
   }
 
+  function getDate(text: string) {
+    const regex = /<p[^>]*>(.*?)<\/p>/g;
+    const match = regex.exec(text);
+    return match
+      ? new Date(match[1].split('/').reverse().join('-'))
+      : new Date();
+  }
+
+  function removeDate(text: string) {
+    return text.replace(/<p>.*<\/p>/, '');
+  }
+
   return (
     <Layout>
       <Main className={className}>
         {post && (
           <div>
             <Title>{post.title.rendered}</Title>
-            <DateStyled>{formatDate(new Date(post.date))}</DateStyled>
-            {(parse(post.content.rendered) as any).map((item: any) =>
-              renderHTMLMarkup(item)
+            <DateStyled>
+              {formatDate(getDate(post.content.rendered))}
+            </DateStyled>
+            {(parse(removeDate(post.content.rendered)) as any).map(
+              (item: any) => renderHTMLMarkup(item)
             )}
           </div>
         )}
