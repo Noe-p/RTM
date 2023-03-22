@@ -10,9 +10,13 @@ interface LayoutProps {
 export function Layout(props: LayoutProps): JSX.Element {
   const { children, className } = props;
 
+  function getFirstPath() {
+    return window.location.pathname.split('/')[1];
+  }
+
   return (
     <Main className={className}>
-      <Header currentPage={window.location.pathname}/>
+      <Header currentPage={getFirstPath()} />
       {children}
     </Main>
   );

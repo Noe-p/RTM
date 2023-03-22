@@ -1,25 +1,25 @@
-import styled from "styled-components";
-import { Layout } from "../components/Layout";
+import styled from 'styled-components';
+import { Layout } from '../components/Layout';
 
-interface NoussoutenirProps {
-    className?: string;
-  }
+interface NousSoutenirProps {
+  className?: string;
+}
 
-export function Noussoutenir(props: NoussoutenirProps): JSX.Element {
-    const { className } = props;
-  
-    return (
-      <Layout>
-        <Main className={className}>
-          <h1>Nous soutenir</h1>
-        </Main>
-      </Layout>
-    );
-  }
+export function NousSoutenir(props: NousSoutenirProps): JSX.Element {
+  const { className } = props;
 
-  const Main = styled.div`
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  `;
+  return (
+    <Layout>
+      <Main className={className}>
+        <h1>Nous soutenir</h1>
+      </Main>
+    </Layout>
+  );
+}
+
+const Main = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
