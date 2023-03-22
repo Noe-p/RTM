@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { WP_REST_API_Post } from 'wp-types';
 import { Layout } from '../../components/Layout';
 import { H1, H2, H3, P1 } from '../../components/Typos';
-import { POST_URL } from '../../worpress';
+import { POST_URL } from '../../wordpress';
 
 interface ActionProps {
   className?: string;

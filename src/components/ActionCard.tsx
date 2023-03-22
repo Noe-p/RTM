@@ -9,10 +9,11 @@ interface ActionCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   date: Date;
   idAction: number;
+  isWhite?: boolean;
 }
 
 export function ActionCard(props: ActionCardProps): JSX.Element {
-  const { className, image, date, title, idAction } = props;
+  const { className, image, date, title, idAction, isWhite } = props;
   let navigate = useNavigate();
 
   function formatDate(date: Date): string {
@@ -29,7 +30,7 @@ export function ActionCard(props: ActionCardProps): JSX.Element {
       onClick={() => navigate(`/actions/${idAction}`)}
     >
       <Image src={image ? image : '/assets/empty-image.png'} alt={title} />
-      <Description>
+      <Description $isWhite={isWhite}>
         <H3Styled>{title}</H3Styled>
         <P1Styled>{formatDate(date)}</P1Styled>
       </Description>
@@ -47,7 +48,7 @@ const Main = styled.div`
   border-radius: 10px;
 `;
 
-const Description = styled.div`
+const Description = styled.div<{ $isWhite?: boolean }>`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -55,6 +56,7 @@ const Description = styled.div`
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  background-color: ${({ $isWhite }) => $isWhite && COLORS.WHITE};
 `;
 
 const Image = styled.img`

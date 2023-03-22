@@ -11,10 +11,10 @@ export function ActionSection(props: ActionSectionProps): JSX.Element {
 
   return (
     <ActionSectionStyled>
-      <ActionBlock/>
+      <ActionBlock />
       <Buttons>
-        <Button text='En savoir plus' isWhite/>
-        <Button text='Nous soutenir'/>
+        <Button text='En savoir plus ?' isWhite arrow={false} />
+        <Button text='Nous soutenir' />
       </Buttons>
     </ActionSectionStyled>
   );
@@ -30,7 +30,7 @@ const ActionSectionStyled = styled.div`
     background-color: {colors.grey};
     text-align: center;
     margin-top: 25px;
-`
+`;
 
 const Buttons = styled.div`
   margin-top: 0;
@@ -38,4 +38,4 @@ const Buttons = styled.div`
   flex-direction: row;
   justify-content: space-around;
   width: 30%;
-  `
+`;
