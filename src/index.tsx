@@ -24,7 +24,6 @@ root.render(
         <Route path='/actions/:id' element={<Action />} />
       </Routes>
     </BrowserRouter>
-    c
   </React.StrictMode>
 );
 

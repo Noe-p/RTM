@@ -4,6 +4,7 @@ import { Button } from '../components/Button';
 import { Layout } from '../components/Layout';
 import { SecondBanner } from '../components/SecondBanner';
 import { SectionAction } from '../components/SectionAction';
+import { SectionAdherent } from '../components/SectionAdherent';
 import { H1, P1 } from '../components/Typos';
 import { COLORS } from '../styles/constantes';
 
@@ -44,6 +45,7 @@ export function Homepage(props: HomepageProps): JSX.Element {
         <SecondBanner />
         <ActionSection />
         <SectionAction />
+        <SectionAdherent/>
       </Main>
     </Layout>
   );

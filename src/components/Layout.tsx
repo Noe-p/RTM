@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 interface LayoutProps {
@@ -18,6 +19,7 @@ export function Layout(props: LayoutProps): JSX.Element {
     <Main className={className}>
       <Header currentPage={getFirstPath()} />
       {children}
+      <Footer/>
     </Main>
   );
 }
