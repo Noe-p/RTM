@@ -5,8 +5,9 @@ import './App.css';
 import { Action } from './pages/Actions/Action';
 import { Actions } from './pages/Actions/Actions';
 import { Homepage } from './pages/Homepage';
-import { Noussoutenir } from './pages/Noussoutenir';
-import { Quisommesnous } from './pages/Quisommesnous';
+import { NousSoutenir } from './pages/NousSoutenir';
+import { QuiSommesNous } from './pages/QuiSommesNous';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -17,12 +18,13 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='/quisommesnous' element={<Quisommesnous />} />
-        <Route path='/noussoutenir' element={<Noussoutenir />} />
+        <Route path='/qui-sommes-nous' element={<QuiSommesNous />} />
+        <Route path='/nous-soutenir' element={<NousSoutenir />} />
         <Route path='/actions' element={<Actions />} />
         <Route path='/actions/:id' element={<Action />} />
       </Routes>
     </BrowserRouter>
+    c
   </React.StrictMode>
 );
 

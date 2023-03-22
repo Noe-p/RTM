@@ -13,13 +13,27 @@ export function Header(props: HeaderProps): JSX.Element {
 
   return (
     <Main>
-      <img src='/reveille-ta-moelle-logo.png' alt="logo" />
+      <img src='/reveille-ta-moelle-logo.png' alt='logo' />
       <Nav>
-        <Link to='/'><P1Styled $currentPage={currentPage === "/"}>Accueil</P1Styled></Link>
-        <Link to='/noussoutenir'><P1Styled $currentPage={currentPage === "/noussoutenir"}>Nous soutenir</P1Styled></Link>
-        <Link to='/action'><P1Styled $currentPage={currentPage === "/action"}>Actions</P1Styled></Link>
-        <Link to='/quisommesnous'><P1Styled $currentPage={currentPage === "/quisommesnous"}>Qui sommes-nous ?</P1Styled></Link>
-        <Link to='/noussoutenir' ><Button text='Nous soutenir'/></Link>
+        <Link to='/'>
+          <P1Styled $currentPage={currentPage === ''}>Accueil</P1Styled>
+        </Link>
+        <Link to='/nous-soutenir'>
+          <P1Styled $currentPage={currentPage === 'nous-soutenir'}>
+            Nous soutenir
+          </P1Styled>
+        </Link>
+        <Link to='/actions'>
+          <P1Styled $currentPage={currentPage === 'actions'}>Actions</P1Styled>
+        </Link>
+        <Link to='/qui-sommes-nous'>
+          <P1Styled $currentPage={currentPage === 'qui-sommes-nous'}>
+            Qui sommes-nous ?
+          </P1Styled>
+        </Link>
+        <Link to='/noussoutenir'>
+          <Button text='Nous soutenir' />
+        </Link>
       </Nav>
     </Main>
   );
@@ -30,13 +44,13 @@ const Main = styled.div`
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  background-color: #2E2C73;
+  background-color: #2e2c73;
   width: 100%;
   height: 548px;
   color: white;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
-  img{
+  img {
     width: 30px;
     margin: 20px;
   }
@@ -47,16 +61,17 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  a{
+  a {
     text-decoration: none;
     margin: 0 20px;
-    :visited{
+    :visited {
       color: white;
     }
-  };
-`
+  }
+`;
 const P1Styled = styled(P1)<{ $currentPage?: boolean }>`
   color: white;
   padding-bottom: 7px;
-  border-bottom: ${({ $currentPage }) => $currentPage ? '3px solid #FA4516' : 'none'};
-`
+  border-bottom: ${({ $currentPage }) =>
+    $currentPage ? '3px solid #FA4516' : 'none'};
+`;
