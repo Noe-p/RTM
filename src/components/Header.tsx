@@ -48,14 +48,17 @@ const Main = styled.div`
   justify-content: space-between;
   background-color: #2e2c73;
   width: 100%;
-  height: 548px;
   color: white;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
+  position: fixed;
+  top: 0;
   img {
     width: 30px;
     margin: 20px;
   }
+  z-index: 999999;
+  height: 100px;
 `;
 
 const Nav = styled.nav`

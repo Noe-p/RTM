@@ -19,14 +19,14 @@ export function Layout(props: LayoutProps): JSX.Element {
     <Main className={className}>
       <Header currentPage={getFirstPath()} />
       {children}
-      <Footer/>
+      <Footer />
     </Main>
   );
 }
 
 const Main = styled.div`
+  margin-top: 100px;
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   flex-direction: column;

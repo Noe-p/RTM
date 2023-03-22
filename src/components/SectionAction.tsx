@@ -81,7 +81,6 @@ const Main = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${COLORS.GREY};
-  width: 100%;
   margin-top: 25px;
   padding: 30px;
   flex-direction: column;

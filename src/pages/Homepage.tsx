@@ -46,7 +46,7 @@ export function Homepage(props: HomepageProps): JSX.Element {
         <SecondBanner />
         <ActionSection />
         <SectionAction />
-        <SectionAdherent/>
+        <SectionAdherent />
         <SectionQuestion />
       </Main>
     </Layout>
@@ -69,7 +69,7 @@ const Main = styled.div`
 
 const Banner = styled.div`
   width: 100%;
-  position relative;
+  position: relative;
 `;
 
 const Caption = styled.div`

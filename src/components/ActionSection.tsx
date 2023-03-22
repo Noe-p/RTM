@@ -37,5 +37,5 @@ const Buttons = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30%;
+  width: 20%;
 `;

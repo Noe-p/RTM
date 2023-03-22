@@ -48,10 +48,13 @@ const ButtonStyled = styled.button<{ $isWhite?: boolean }>`
   background-color: ${(props) =>
     props.$isWhite ? COLORS.WHITE : COLORS.ORANGE};
   color: ${(props) => (props.$isWhite ? COLORS.ORANGE : COLORS.WHITE)};
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 `;
 
 const ArrowStyled = styled(ArrowRightIcon)<{ $isHover?: boolean }>`
-  margin-left: ${(props) => (props.$isHover ? '8px' : '5px')};
-  transition: margin-left 0.2s ease-in-out;
+  margin-left: 5px;
+  transform: ${(props) =>
+    props.$isHover ? 'translateX(2px)' : 'translateX(0px)'};
+  transition: margin-left 0.3s ease-in-out;
   width: 15px;
 `;
