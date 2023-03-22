@@ -5,7 +5,7 @@ import { WP_REST_API_Posts } from 'wp-types';
 import { ActionCard } from '../../components/ActionCard';
 import { Layout } from '../../components/Layout';
 import { H1, H2, H3 } from '../../components/Typos';
-import { POST_URL, ROOT_URL } from '../../worpress';
+import { POST_URL, ROOT_URL } from '../../wordpress';
 
 interface ActionsProps {
   className?: string;
