@@ -12,7 +12,7 @@ export function Layout(props: LayoutProps): JSX.Element {
 
   return (
     <Main className={className}>
-      <Header />
+      <Header currentPage={window.location.pathname}/>
       {children}
     </Main>
   );

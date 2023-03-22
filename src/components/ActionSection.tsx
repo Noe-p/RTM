@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ActionBlock } from './ActionBlock';
+import { Button } from './Button';
 
 interface ActionSectionProps {
   className?: string;
@@ -11,13 +12,16 @@ export function ActionSection(props: ActionSectionProps): JSX.Element {
   return (
     <ActionSectionStyled>
       <ActionBlock/>
+      <Buttons>
+        <Button text='En savoir plus' isWhite/>
+        <Button text='Nous soutenir'/>
+      </Buttons>
     </ActionSectionStyled>
   );
 }
 
 const ActionSectionStyled = styled.div`
     width: 100%;
-    height: 2227px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -25,5 +29,13 @@ const ActionSectionStyled = styled.div`
     justify-content: center;
     background-color: {colors.grey};
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
 `
+
+const Buttons = styled.div`
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+  `

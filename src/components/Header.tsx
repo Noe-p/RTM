@@ -1,22 +1,25 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Button } from './Button';
+import { P1 } from './Typos';
 
 interface HeaderProps {
   className?: string;
+  currentPage?: string;
 }
 
 export function Header(props: HeaderProps): JSX.Element {
-  const { className } = props;
+  const { currentPage } = props;
 
   return (
     <Main>
       <img src='/reveille-ta-moelle-logo.png' alt="logo" />
       <Nav>
-        <Link to='/'><p>Accueil</p></Link>
-        <Link to='/'><p>Nous soutenir</p></Link>
-        <Link to='/action'><p>Actions</p></Link>
-        <Link to='/quisommesnous'><p>Qui sommes-nous ?</p></Link>
-        <Link to='/'><LastButton>Nous contacter</LastButton ></Link>
+        <Link to='/'><P1Styled $currentPage={currentPage === "/"}>Accueil</P1Styled></Link>
+        <Link to='/noussoutenir'><P1Styled $currentPage={currentPage === "/noussoutenir"}>Nous soutenir</P1Styled></Link>
+        <Link to='/action'><P1Styled $currentPage={currentPage === "/action"}>Actions</P1Styled></Link>
+        <Link to='/quisommesnous'><P1Styled $currentPage={currentPage === "/quisommesnous"}>Qui sommes-nous ?</P1Styled></Link>
+        <Link to='/noussoutenir' ><Button text='Nous soutenir'/></Link>
       </Nav>
     </Main>
   );
@@ -52,10 +55,8 @@ const Nav = styled.nav`
     }
   };
 `
-
-const LastButton = styled.p`
-  display: block;
-  padding : 10px;
-  background-color: #FA4516;
-  border-radius: 50px;
+const P1Styled = styled(P1)<{ $currentPage?: boolean }>`
+  color: white;
+  padding-bottom: 7px;
+  border-bottom: ${({ $currentPage }) => $currentPage ? '3px solid #FA4516' : 'none'};
 `

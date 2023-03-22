@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { Layout } from "../components/Layout";
 
-interface QuisommesnousProps {
+interface NoussoutenirProps {
     className?: string;
   }
 
-export function Quisommesnous(props: QuisommesnousProps): JSX.Element {
+export function Noussoutenir(props: NoussoutenirProps): JSX.Element {
     const { className } = props;
   
     return (
       <Layout>
         <Main className={className}>
-          <h1>Qui sommes nous ?</h1>
+          <h1>Nous soutenir</h1>
         </Main>
       </Layout>
     );
