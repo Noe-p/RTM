@@ -91,6 +91,8 @@ const P1Styled = styled.p<{ $color: string }>`
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  margin: 5px;
+  padding: 0;
   color: ${({ $color }) => $color};
 `;
 

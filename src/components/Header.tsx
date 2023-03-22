@@ -13,7 +13,9 @@ export function Header(props: HeaderProps): JSX.Element {
 
   return (
     <Main>
-      <img src='/reveille-ta-moelle-logo.png' alt='logo' />
+      <Link to='/'>
+        <img src='/reveille-ta-moelle-logo.png' alt='logo' />
+      </Link>
       <Nav>
         <Link to='/'>
           <P1Styled $currentPage={currentPage === ''}>Accueil</P1Styled>
