@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { COLORS } from '../styles/constantes';
 
@@ -12,10 +13,17 @@ interface ButtonProps {
 
 export function Button(props: ButtonProps): JSX.Element {
   const { text, style, isWhite, arrow = true, className } = props;
+  const [isHover, setIsHover] = useState(false);
 
   return (
-    <ButtonStyled className={className} style={style} $isWhite={isWhite}>
-      {text} {arrow && <ArrowStyled />}
+    <ButtonStyled
+      onMouseOver={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      className={className}
+      style={style}
+      $isWhite={isWhite}
+    >
+      {text} {arrow && <ArrowStyled $isHover={isHover} />}
     </ButtonStyled>
   );
 }
@@ -42,7 +50,8 @@ const ButtonStyled = styled.button<{ $isWhite?: boolean }>`
   color: ${(props) => (props.$isWhite ? COLORS.ORANGE : COLORS.WHITE)};
 `;
 
-const ArrowStyled = styled(ArrowRightIcon)`
-  margin-left: 5px;
+const ArrowStyled = styled(ArrowRightIcon)<{ $isHover?: boolean }>`
+  margin-left: ${(props) => (props.$isHover ? '8px' : '5px')};
+  transition: margin-left 0.2s ease-in-out;
   width: 15px;
 `;
