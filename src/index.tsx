@@ -7,8 +7,8 @@ import { Actions } from './pages/Actions/Actions';
 import { Adherents } from './pages/Adherents';
 import { Contact } from './pages/Contact';
 import { Homepage } from './pages/Homepage';
-import { NousSoutenir } from './pages/NousSoutenir';
-import { QuiSommesNous } from './pages/QuiSommesNous';
+import { NousSoutenir } from './pages/Noussoutenir';
+import { QuiSommesNous } from './pages/Quisommesnous';
 
 import reportWebVitals from './reportWebVitals';
 
