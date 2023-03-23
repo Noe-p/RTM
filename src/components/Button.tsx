@@ -34,7 +34,7 @@ const ButtonStyled = styled.button<{ $isWhite?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 10px 15px;
   font-weight: bold;
   border-radius: 50px;
   block-size: fit-content;

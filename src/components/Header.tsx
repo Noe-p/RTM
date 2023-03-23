@@ -34,7 +34,7 @@ export function Header(props: HeaderProps): JSX.Element {
             Qui sommes-nous ?
           </P1Styled>
         </Link>
-        <Link to='/'>
+        <Link to='/contact'>
           <Button text='Nous contacter' />
         </Link>
       </Nav>

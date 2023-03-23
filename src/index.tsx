@@ -5,6 +5,7 @@ import './App.css';
 import { Action } from './pages/Actions/Action';
 import { Actions } from './pages/Actions/Actions';
 import { Adherents } from './pages/Adherents';
+import { Contact } from './pages/Contact';
 import { Homepage } from './pages/Homepage';
 import { NousSoutenir } from './pages/NousSoutenir';
 import { QuiSommesNous } from './pages/QuiSommesNous';
@@ -24,6 +25,7 @@ root.render(
         <Route path='/actions' element={<Actions />} />
         <Route path='/actions/:id' element={<Action />} />
         <Route path='/adherents' element={<Adherents />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
