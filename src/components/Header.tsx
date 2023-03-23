@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { COLORS } from '../styles/constantes';
 import { Button } from './Button';
 import { P1 } from './Typos';
 
@@ -46,7 +47,7 @@ const Main = styled.div`
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  background-color: #2e2c73;
+  background-color: ${COLORS.BLUE};
   width: 100%;
   color: white;
   font-size: 15px;
@@ -76,7 +77,24 @@ const Nav = styled.nav`
 `;
 const P1Styled = styled(P1)<{ $currentPage?: boolean }>`
   color: white;
-  padding-bottom: 7px;
-  border-bottom: ${({ $currentPage }) =>
-    $currentPage ? '3px solid #FA4516' : 'none'};
+  opacity: ${({ $currentPage }) => ($currentPage ? 1 : 0.6)};
+  transition: all 0.2s ease-in-out;
+
+  ::after {
+    content: '';
+    display: block;
+    width: ${({ $currentPage }) => ($currentPage ? '100%' : '0%')};
+    height: 2px;
+    background: ${COLORS.ORANGE};
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    top: 3px;
+  }
+
+  :hover {
+    opacity: 1;
+    ::after {
+      width: 100%;
+    }
+  }
 `;
