@@ -35,7 +35,10 @@ export function Header(props: HeaderProps): JSX.Element {
           </P1Styled>
         </Link>
         <Link to='/contact'>
-          <Button text='Nous contacter' />
+          <ButtonStyled
+            text='Nous contacter'
+            $currentPage={currentPage === 'contact'}
+          />
         </Link>
       </Nav>
     </Main>
@@ -97,4 +100,9 @@ const P1Styled = styled(P1)<{ $currentPage?: boolean }>`
       width: 100%;
     }
   }
+`;
+
+const ButtonStyled = styled(Button)<{ $currentPage?: boolean }>`
+  background-color: ${({ $currentPage }) =>
+    $currentPage ? COLORS.BLUE : COLORS.ORANGE};
 `;
