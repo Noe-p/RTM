@@ -1,7 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { WP_REST_API_Posts } from 'wp-types';
+import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
 import { COLORS } from '../styles/constantes';
 import { POST_URL, ROOT_URL } from '../wordpress';
 import { ActionCard } from './ActionCard';
@@ -36,7 +36,10 @@ export function SectionAction(props: SectionActionProps): JSX.Element {
     fetch(POST_URL)
       .then((response) => response.json())
       .then((posts) => {
-        setPosts(posts as WP_REST_API_Posts);
+        const actionPosts = posts.filter((post: WP_REST_API_Post) => {
+          return post.categories?.includes(10);
+        });
+        setPosts(actionPosts as WP_REST_API_Posts);
       });
   }
 
