@@ -6,16 +6,10 @@ import { Layout } from '../components/Layout';
 import { H1, P1 } from '../components/Typos';
 import { COLORS } from '../styles/constantes';
 
-interface NousSoutenirProps {
-  className?: string;
-}
-
-export function NousSoutenir(props: NousSoutenirProps): JSX.Element {
-  const { className } = props;
-
+export function NousSoutenir(): JSX.Element {
   return (
     <Layout>
-      <Main className={className}>
+      <Main>
         <H1Styled>Comment nous soutenir ?</H1Styled>
         <P1>
           Nous pouvons tous apporter votre pierre à l’édifice. Notre association
