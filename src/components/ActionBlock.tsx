@@ -1,15 +1,7 @@
 import styled from 'styled-components';
 
-interface ActionBlockProps {
-  className?: string;
-}
-
-export function ActionBlock(props: ActionBlockProps): JSX.Element {
-  const { className } = props;
-
-  return (
-    <ActionBlockStyled/>
-  );
+export function ActionBlock(): JSX.Element {
+  return <ActionBlockStyled />;
 }
 
 const ActionBlockStyled = styled.div`
@@ -21,4 +13,4 @@ const ActionBlockStyled = styled.div`
     justify-content: center;
     background-color: {colors.grey};
     text-align: center;
-`
+`;

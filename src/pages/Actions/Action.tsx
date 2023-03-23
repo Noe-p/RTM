@@ -24,7 +24,7 @@ export function Action(props: ActionProps): JSX.Element {
 
   useEffect(() => {
     getPost();
-  }, []);
+  });
 
   function formatDate(date: Date): string {
     return `${date.getDate().toString().padStart(2, '0')}/${(

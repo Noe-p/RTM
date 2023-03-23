@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import { COLORS } from '../styles/constantes';
 import { P1 } from './Typos';
 
-interface FooterProps {
-  className?: string;
-}
-
-export function Footer(props: FooterProps): JSX.Element {
-  const { className } = props;
-
+export function Footer(): JSX.Element {
   return (
     <FooterStyled>
       <Logo>

@@ -2,34 +2,27 @@ import styled from 'styled-components';
 import { ActionBlock } from './ActionBlock';
 import { Button } from './Button';
 
-interface ActionSectionProps {
-  className?: string;
-}
-
-export function ActionSection(props: ActionSectionProps): JSX.Element {
-  const { className } = props;
-
+export function ActionSection(): JSX.Element {
   return (
     <ActionSectionStyled>
       <ActionBlock />
       <Buttons>
-        <Button text='En savoir plus ?' isWhite arrow={false} />
-        <Button text='Nous soutenir' />
+        <ButtonStyled text='En savoir plus ?' isWhite arrow={false} />
+        <ButtonStyled text='Nous soutenir' />
       </Buttons>
     </ActionSectionStyled>
   );
 }
 
 const ActionSectionStyled = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    background-color: {colors.grey};
-    text-align: center;
-    margin-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
 `;
 
 const Buttons = styled.div`
@@ -37,5 +30,8 @@ const Buttons = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 20%;
+`;
+
+const ButtonStyled = styled(Button)`
+  margin: 0 10px;
 `;
