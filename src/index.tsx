@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Action } from './pages/Actions/Action';
 import { Actions } from './pages/Actions/Actions';
+import { Adherents } from './pages/Adherents';
 import { Homepage } from './pages/Homepage';
 import { NousSoutenir } from './pages/NousSoutenir';
 import { QuiSommesNous } from './pages/QuiSommesNous';
@@ -22,6 +23,7 @@ root.render(
         <Route path='/nous-soutenir' element={<NousSoutenir />} />
         <Route path='/actions' element={<Actions />} />
         <Route path='/actions/:id' element={<Action />} />
+        <Route path='/adherents' element={<Adherents />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../components/Button';
 import { CardSoutenir } from '../components/CardSoutenir';
@@ -108,7 +109,9 @@ export function NousSoutenir(props: NousSoutenirProps): JSX.Element {
             association !
           </P1Styled>
         </>
-        <ButtonStyled text='Découvrir les adhérents' isWhite />
+        <LinkStyled to='/adherents'>
+          <ButtonStyled text='Découvrir les adhérents' isWhite />
+        </LinkStyled>
         <ButtonStyled style={{ marginTop: 10 }} text='Devenir adhérent' />
       </CardSoutenir>
       <CardSoutenir
@@ -152,4 +155,8 @@ const ButtonStyled = styled(Button)`
 
 const P1Styled = styled(P1)`
   color: ${COLORS.BLUE};
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
 `;

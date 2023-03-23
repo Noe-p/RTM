@@ -6,10 +6,11 @@ import { Header } from './Header';
 interface LayoutProps {
   children?: ReactNode;
   className?: string;
+  currentPage?: string;
 }
 
 export function Layout(props: LayoutProps): JSX.Element {
-  const { children, className } = props;
+  const { children, className, currentPage } = props;
 
   function getFirstPath() {
     return window.location.pathname.split('/')[1];
@@ -17,7 +18,7 @@ export function Layout(props: LayoutProps): JSX.Element {
 
   return (
     <Main className={className}>
-      <Header currentPage={getFirstPath()} />
+      <Header currentPage={currentPage ? currentPage : getFirstPath()} />
       {children}
       <Footer />
     </Main>

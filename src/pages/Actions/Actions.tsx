@@ -1,7 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { WP_REST_API_Posts } from 'wp-types';
+import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
 import { ActionCard } from '../../components/ActionCard';
 import { Layout } from '../../components/Layout';
 import { H1, H2, H3 } from '../../components/Typos';
@@ -35,14 +35,17 @@ export function Actions(props: ActionsProps): JSX.Element {
     fetch(POST_URL)
       .then((response) => response.json())
       .then((posts) => {
-        setPosts(posts as WP_REST_API_Posts);
+        const actionPosts = posts.filter((post: WP_REST_API_Post) => {
+          return post.categories?.includes(10);
+        });
+        setPosts(actionPosts as WP_REST_API_Posts);
       });
   }
 
   function filterPastPost(posts: WP_REST_API_Posts) {
     const today = new Date();
     const filteredPosts = posts.filter((post) => {
-      return getDate(post.content.rendered).getDate() < today.getDate();
+      return getDate(post.content.rendered) < today;
     });
     return filteredPosts;
   }
@@ -50,7 +53,7 @@ export function Actions(props: ActionsProps): JSX.Element {
   function filterFuturPost(posts: WP_REST_API_Posts) {
     const today = new Date();
     const filteredPosts = posts.filter((post) => {
-      return getDate(post.content.rendered).getDate() >= today.getDate();
+      return getDate(post.content.rendered) >= today;
     });
     return filteredPosts;
   }
