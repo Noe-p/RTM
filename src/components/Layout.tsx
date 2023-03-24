@@ -32,4 +32,8 @@ const Main = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
 `;
