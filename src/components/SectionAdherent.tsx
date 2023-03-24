@@ -16,10 +16,9 @@ export function SectionAdherent(props: SectionAdherentProps): JSX.Element {
         Ils font avancer le projet, aident l’association avec <br />
         <P1Styled>leur motivation, leur partage et leur talent.</P1Styled>
       </P1>
-      <img alt='img-adherents' src='/assets/adherent-img.png' />
+      <ImageAdherent alt='img-adherents' src='/assets/adherent-img.png' />
       <ButtonContainer>
-        <ButtonStyled text='Découvrir nos adhérents' isWhite />
-        <ButtonStyled text='Devenir adhérent' />
+        <ButtonStyled text='Découvrir nos adhérents' />
       </ButtonContainer>
     </SectionAdherentStyled>
   );
@@ -50,3 +49,10 @@ const ButtonContainer = styled.div`
 const ButtonStyled = styled(Button)`
   margin: 10px;
 `;
+
+const ImageAdherent = styled.img`
+  margin-top: 20px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+`

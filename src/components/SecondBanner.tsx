@@ -12,7 +12,7 @@ export function SecondBanner(): JSX.Element {
           <ExplicationStyled>
             <ImageStyled
               alt={'moelle'}
-              src={'/assets/moelle-osseuse1.jpg'}
+              src={'/assets/icons/icon1.png'}
             ></ImageStyled>
             <P1Block>
               Chaque année,{' '}
@@ -24,7 +24,10 @@ export function SecondBanner(): JSX.Element {
             </P1Block>
           </ExplicationStyled>
           <ExplicationStyled>
-            <ImageStyled alt={'moelle'} src={'/assets/os.jpg'}></ImageStyled>
+            <ImageStyled 
+              alt={'moelle'} 
+              src={'/assets/icons/icon2.png'}
+            ></ImageStyled>
             <P1Block>
               La moelle osseuse (ne pas confondre avec moelle épinière) est une{' '}
               <P1StyledInline color={COLORS.ORANGE}>
@@ -36,7 +39,7 @@ export function SecondBanner(): JSX.Element {
           <ExplicationStyled>
             <ImageStyled
               alt={'moelle'}
-              src={'/assets/seringue.jpg'}
+              src={'/assets/icons/icon3.png'}
             ></ImageStyled>
             <P1Block>
               Le prélèvement est dans 80% des cas pratiqué{' '}
@@ -98,7 +101,6 @@ const ExplicationStyled = styled.div`
 `;
 
 const ImageStyled = styled.img`
-  width: 139px;
-  height: 139px;
+  width: 50%;
   justify-content: center;
 `;
