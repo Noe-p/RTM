@@ -47,17 +47,17 @@ export function Footer(): JSX.Element {
 const FooterStyled = styled.div`
   margin-top: 50px;
   padding: 10px;
-  height: 213px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2e2c73;
-  width: 100%;
   color: white;
-  font-size: 15px;
-  font-family: 'Inter', sans-serif;
   justify-content: space-around;
-  width: 100%;
+  width: 100vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Logo = styled.div`
@@ -69,6 +69,13 @@ const Logo = styled.div`
     width: 143px;
     margin: 10px;
   }
+
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+    border-right: none;
+    border-bottom: 2px solid ${COLORS.WHITE};
+    width: 90%;
+  }
 `;
 
 const LinkBox = styled.div`
@@ -79,6 +86,15 @@ const LinkBox = styled.div`
   border-right: 2px solid ${COLORS.WHITE};
   a {
     text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    text-align: center;
+    margin: 30px;
+    padding-bottom: 30px;
+    border-right: none;
+    border-bottom: 2px solid ${COLORS.WHITE};
   }
 `;
 
@@ -94,6 +110,15 @@ const Social = styled.div`
   flex-direction: column;
   color: white;
   border-right: 2px solid ${COLORS.WHITE};
+
+  @media (max-width: 768px) {
+    width: 90%;
+    text-align: center;
+    margin: 30px;
+    padding-bottom: 30px;
+    border-right: none;
+    border-bottom: 2px solid ${COLORS.WHITE};
+  }
 `;
 
 const SocialGroup = styled.div`
@@ -103,6 +128,12 @@ const SocialGroup = styled.div`
     height: 20px;
   }
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    justify-content: center;
+    margin-top: 10px;
+  }
 `;
 
 const Others = styled.div`
@@ -110,4 +141,10 @@ const Others = styled.div`
   height: 80%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    text-align: center;
+    margin: 30px;
+  }
 `;
