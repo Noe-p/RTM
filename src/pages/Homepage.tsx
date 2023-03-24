@@ -32,16 +32,7 @@ export function Homepage(props: HomepageProps): JSX.Element {
               osseuse de manière ludique et festive
             </P1Styled>
           </Caption>
-          <Button
-            text='Nous soutenir'
-            style={{
-              position: 'absolute',
-              bottom: '20px',
-              margin: 'auto',
-              left: '0',
-              right: '0',
-            }}
-          ></Button>
+          <ButtonStyled text='Nous soutenir'></ButtonStyled>
         </Banner>
         <SecondBanner />
         <ActionSection />
@@ -74,7 +65,7 @@ const Banner = styled.div`
 
 const Caption = styled.div`
   display: flex;
-  width: 678px;
+  width: 70%;
   height: 200px;
   background-color: ${COLORS.TRANSPARENT_BLUE};
   justify-content: center;
@@ -88,6 +79,12 @@ const Caption = styled.div`
   flex-direction: column;
   color: white;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 300px;
+    padding-bottom: 15px;
+  }
 `;
 
 const H1Styled = styled(H1)`
@@ -98,4 +95,16 @@ const H1Styled = styled(H1)`
 const P1Styled = styled(P1)`
   color: white;
   padding: 0px 30px 0 30px;
+
+  @media (max-width: 768px) {
+    margin: 15px 0;
+  }
+`;
+
+const ButtonStyled = styled(Button)`
+  position: absolute;
+  bottom: 20px;
+  margin: auto;
+  left: 0;
+  right: 0;
 `;

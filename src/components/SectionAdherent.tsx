@@ -16,7 +16,7 @@ export function SectionAdherent(props: SectionAdherentProps): JSX.Element {
         Ils font avancer le projet, aident l’association avec <br />
         <P1Styled>leur motivation, leur partage et leur talent.</P1Styled>
       </P1>
-      <img alt='img-adherents' src='/assets/adherent-img.png' />
+      <Image alt='img-adherents' src='/assets/adherent-img.png' />
       <ButtonContainer>
         <ButtonStyled text='Découvrir nos adhérents' isWhite />
         <ButtonStyled text='Devenir adhérent' />
@@ -26,14 +26,13 @@ export function SectionAdherent(props: SectionAdherentProps): JSX.Element {
 }
 
 const SectionAdherentStyled = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    background-color: {colors.grey};
-    text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 const P1Styled = styled(P1)`
@@ -49,4 +48,13 @@ const ButtonContainer = styled.div`
 
 const ButtonStyled = styled(Button)`
   margin: 10px;
+`;
+
+const Image = styled.img`
+  width: 100vw;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
 `;
