@@ -41,11 +41,20 @@ const Main = styled.div`
 const Container = styled.div`
   display: flex;
   width: 90%;
+  @media (max-width: 768px) {
+    width: 90%;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 5%;
+  }
 `;
 
 const H1Styled = styled(H1)`
   color: ${COLORS.BLUE};
   text-transform: uppercase;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const LeftImage = styled.img`
