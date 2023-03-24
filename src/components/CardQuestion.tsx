@@ -31,11 +31,13 @@ const Main = styled.div`
   justify-content: center;
   width: 80%;
   margin-top: 50px;
-
   @media (max-width: 768px) {
-    flex-direction: column;
     width: 90%;
+    flex-direction: ${LeftImage => (LeftImage ? 'column' : 'column-reverse')};
+    align-items: center;
+    margin: 5%;
   }
+  
 `;
 const Container = styled.div`
   display: flex;
@@ -51,10 +53,9 @@ const LeftImage = styled.img`
   width: 350px;
   height: 50%;
   margin-right: 50px;
-
   @media (max-width: 768px) {
-    width: 200px;
     margin-right: 0;
+    margin-top: 0;
   }
 `;
 
@@ -62,9 +63,8 @@ const RightImage = styled.img`
   width: 350px;
   height: 50%;
   margin-left: 50px;
-
   @media (max-width: 768px) {
-    width: 200px;
     margin-left: 0;
+    margin-top: 0;
   }
 `;
