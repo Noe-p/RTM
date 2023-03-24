@@ -21,109 +21,104 @@ export function NousSoutenir(): JSX.Element {
         </P1>
       </Main>
       <CardSoutenir
-        title='Devenir Donneur de vie'
-        rightImage='/assets/page1/Group2.jpg'
+        title='Comment être un donneur de vie ?'
+        rightImage='/assets/page1/Group2.png'
       >
         <>
-          <P1Styled>Découvrez si vous avez le profil du donneur :</P1Styled>
+          <P1Styled>En acceptant d’être donneur de vie :</P1Styled>
           <ul>
             <li>
-              <P1Styled>Être âgé de 18 à 35 ans</P1Styled>
+              <P1Styled>Vous donner une chance à un patient de pouvoir guérir de sa maladie.</P1Styled>
             </li>
             <li>
-              <P1Styled>
-                Être en parfaite santé et ne pas souffrir de maladies chroniques
-                avec des traitements imposés.
-              </P1Styled>
+              <P1Styled> Vous lui donnez une chance de pouvoir revivre normalement</P1Styled>
             </li>
             <li>
-              <P1Styled>Accepter de remplir un questionnaire de santé</P1Styled>
-            </li>
-            <li>
-              <P1Styled>
-                Effectuer une prise de sang pour établir sa carte d’identité
-                génétique pour établir votre compatibilité avec un patient
-                malade
-              </P1Styled>
+              <P1Styled>Vous pouvez changer sa vie, celle de sa famille, et la votre.</P1Styled>
             </li>
           </ul>
           <P1Styled>
-            Le don de moelle osseuse ne peut être pratiqué qu’une seule fois. Le
-            donneur est retiré du registre des donneurs une fois que celui-ci
-            est effectué. Dans de rares cas (10% seulement), un complément peut
-            vous être demandé.
-          </P1Styled>
-          <P1Styled>
-            En étant inscrit, vous ne serez pas automatiquement appelé à faire
-            un don. Votre profil sera étudié afin de vérifier si vous
-            correspondez aux critères de sélection cités ci-dessus, afin
-            d’effectuer le don en toute sécurité.
+            Le don est un acte de bravoure et de bonté.
+            N’attendez plus et  inscrivez-vous !
           </P1Styled>
         </>
-        <ButtonStyled text='Devenir donneur' />
+        <ButtonStyled text='Devenir donneur sur dondemoelleosseuse.fr' />
       </CardSoutenir>
       <CardSoutenir
-        title='Devenir bénévole'
-        rightImage='/assets/page1/Group1.jpg'
+        title='Comment faire un don ?'
+        rightImage='/assets/page1/Group1.png'
       >
         <>
           <P1Styled>
-            Nous tenons à vous remercier pour votre intérêt dans notre cause.
+            Tout le monde peut faire un don à Réveille Ta Moelle ! 
           </P1Styled>
           <P1Styled>
-            En acceptant d’être bénévole, vous permettez à de nouveaux inscrits
-            d’être donneurs et ainsi, sauver de nombreuses vies qui ont besoin
-            d’un don de moelle osseuse.
-          </P1Styled>
-          <P1Styled>
-            Nous sommes une équipe soudée et originale avec un fort esprit de
-            cohésion qui vous accueillera à bras ouverts.
-          </P1Styled>
-          <P1Styled>
-            Inscrivez-vous dès maintenant et rejoignez Réveille Ta Moelle !
+            Il n’y a pas de petits dons , il n’y a que de grandes participations ! Nous avons besoins de vous pour faire avancer l’association et faire connaître au mieux le don de moelle osseuse.
           </P1Styled>
         </>
-        <ButtonStyled text='Devenir bénévole' />
+        <ButtonStyled text='Faire un don' />
       </CardSoutenir>
       <CardSoutenir
-        title='Devenir adhérent'
-        rightImage='/assets/page1/Group3.jpg'
+        title='Qu’est-ce qu’un bénévole ?'
+        rightImage='/assets/page1/Group3.png'
       >
         <>
           <P1Styled>
-            Particulier ou professionnel, individuel ou collectif, vous êtes
-            tous les bienvenus chez Réveille Ta Moelle !
+            Le bénévolat est un don de soi-même sous le signe de l’entraide.
           </P1Styled>
           <P1Styled>
-            Si vous souhaitez faire avancer le projet avec nous, accompagné de
-            votre motivation et vos talents, devenez adhérent !
+            Apportez une aide précieuse pour convaincre de nouveaux donneurs :
           </P1Styled>
-          <P1Styled>
-            Découvrez nos adhérents et leurs missions au sein de notre
-            association !
-          </P1Styled>
+          <ul>
+            <li>
+              <P1Styled>Faites connaitre notre cause</P1Styled>
+            </li>
+            <li>
+              <P1Styled>Participez à nos actions</P1Styled>
+            </li>
+            <li>
+              <P1Styled>Partagez nos combats sur les réseaux sociaux </P1Styled>
+            </li>
+          </ul>
         </>
-        <LinkStyled to='/adherents'>
-          <ButtonStyled text='Découvrir les adhérents' isWhite />
+        <LinkStyled to='/benevoles'>
+          <ButtonStyled text='Devenez bénévole'/>
         </LinkStyled>
-        <ButtonStyled style={{ marginTop: 10 }} text='Devenir adhérent' />
       </CardSoutenir>
       <CardSoutenir
-        title='Devenir partenaire'
-        rightImage='/assets/page1/Group4.jpg'
+        title='Comment devenir un partenaire ?'
+        rightImage='/assets/page1/Group4.png'
       >
         <>
           <P1Styled>
-            {'-> Soignez de nombreuses vies en participant à nos actions.'}
+            Vous êtes acteur local et sensible à la cause du don de moelle osseuse ?
           </P1Styled>
-          <P1Styled>{'-> Changez la vie des patients '}</P1Styled>
+          <P1Styled>{'-> Soyons partenaires ! '}</P1Styled>
           <P1Styled>
-            {
-              '-> Une action qui changera votre vision sur le don de moelle osseuse.'
-            }
+            Forts d’une équipe diversifiée et d’une association originale, nous attestons d’une forte implication de nos partenaires actuels :  
+          </P1Styled>
+          <P1Styled>
+            L’EFS de Rennes, l’Agence de la Biomédecine et bien d’autres !          
+          </P1Styled>
+          <P1Styled>
+            Nous tenons à vous remercier sincèrement car notre projet ne pourrait pas avoir lieu sans vous !
           </P1Styled>
         </>
         <ButtonStyled text='Devenir partenaire' />
+      </CardSoutenir>
+      <CardSoutenir
+        title='Qu’est-ce qu’un adhérent ?'
+        rightImage='/assets/page1/Group5.png'
+      >
+        <>
+          <P1Styled>
+            Tout le monde peut être adhérent !           
+          </P1Styled>
+          <P1Styled>
+            En le devenant, vous faites partie de l’aventure, vous soutenez le projet par votre motivation et votre partage sur les réseaux sociaux.          
+          </P1Styled>
+        </>
+        <ButtonStyled text='Devenir adhérent' />
       </CardSoutenir>
     </Layout>
   );
@@ -149,6 +144,7 @@ const ButtonStyled = styled(Button)`
 
 const P1Styled = styled(P1)`
   color: ${COLORS.BLUE};
+  margin-bottom: 10px;
 `;
 
 const LinkStyled = styled(Link)`

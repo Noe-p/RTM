@@ -41,11 +41,20 @@ const Main = styled.div`
 const Container = styled.div`
   display: flex;
   width: 90%;
+  @media (max-width: 768px) {
+    width: 90%;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 5%;
+  }
 `;
 
 const H1Styled = styled(H1)`
   color: ${COLORS.BLUE};
   text-transform: uppercase;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const LeftImage = styled.img`
@@ -53,6 +62,10 @@ const LeftImage = styled.img`
   height: 50%;
   margin-right: 50px;
   margin-top: 50px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-top: 0;
+  }
 `;
 
 const RightImage = styled.img`
@@ -60,4 +73,8 @@ const RightImage = styled.img`
   height: 50%;
   margin-left: 50px;
   margin-top: 50px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 0;
+  }
 `;
