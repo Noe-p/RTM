@@ -117,6 +117,6 @@ const ExplicationStyled = styled.div`
 `;
 
 const ImageStyled = styled.img`
-  width: 50%;
+  width: 15%;
   justify-content: center;
 `;
