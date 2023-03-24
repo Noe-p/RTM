@@ -7,7 +7,9 @@ export function Footer(): JSX.Element {
   return (
     <FooterStyled>
       <Logo>
-        <img src='/assets/reveille-ta-moelle-logo 1.png' alt='logo' />
+        <Link to='/'>
+          <img src='/assets/reveille-ta-moelle-logo 1.png' alt='logo' />
+        </Link>
       </Logo>
       <LinkBox>
         <Link to='/nous-soutenir'>
@@ -19,7 +21,7 @@ export function Footer(): JSX.Element {
         <Link to='/qui-sommes-nous'>
           <P1Styled>Qui sommes-nous ?</P1Styled>
         </Link>
-        <Link to='/'>
+        <Link to={{ pathname: '/qui-sommes-nous', hash: '#contact' }}>
           <P1Styled>Nous contacter</P1Styled>
         </Link>
       </LinkBox>

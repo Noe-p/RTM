@@ -34,10 +34,10 @@ export function Header(props: HeaderProps): JSX.Element {
             Qui sommes-nous ?
           </P1Styled>
         </Link>
-        <Link to='/contact'>
+        <Link to='/adherents'>
           <ButtonStyled
-            text='Nous contacter'
-            $currentPage={currentPage === 'contact'}
+            text='Les adhérents'
+            $currentPage={currentPage === 'adherents'}
           />
         </Link>
       </Nav>

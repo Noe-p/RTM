@@ -40,7 +40,7 @@ export function Action(props: ActionProps): JSX.Element {
       const content = data.props.children;
       switch (type) {
         case 'p':
-          return <P1>{content}</P1>;
+          return <P1Styled>{content}</P1Styled>;
         case 'h1':
           return <H1>{content}</H1>;
         case 'h2':
@@ -116,7 +116,8 @@ export function Action(props: ActionProps): JSX.Element {
 
 const Title = styled(H1)`
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 50px;
+  margin-bottom: 0;
 `;
 
 const DateStyled = styled(P1)`
@@ -139,4 +140,8 @@ const ImagesContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
+`;
+
+const P1Styled = styled(P1)`
+  margin: 10px 0;
 `;

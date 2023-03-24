@@ -41,7 +41,7 @@ export function Adherents(): JSX.Element {
   }, []);
 
   return (
-    <Layout currentPage='nous-soutenir'>
+    <Layout>
       <Main>
         <P1Styled>Ils font bouger les choses</P1Styled>
         <H1Styled>Découvrez nos adhérents</H1Styled>
@@ -117,9 +117,11 @@ const TextContainer = styled.div`
 
 const Name = styled(H2)`
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 `;
 
 const DateStyled = styled(P1)`
-  margin: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
 `;
