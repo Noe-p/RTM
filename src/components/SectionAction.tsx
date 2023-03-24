@@ -54,7 +54,7 @@ export function SectionAction(props: SectionActionProps): JSX.Element {
 
   return (
     <Main className={className}>
-      <H2>Les actions de l’association</H2>
+      <H2Styled>Les actions de l’association</H2Styled>
       <P1Styled>
         Nos actions au sein de l'association mêlent musique, art et inscription
         sur les listes de donneurs de moelle osseuse. Nous vous invitons à
@@ -78,15 +78,25 @@ export function SectionAction(props: SectionActionProps): JSX.Element {
   );
 }
 
+const H2Styled = styled(H2)`
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
 const Main = styled.div`
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   background-color: ${COLORS.GREY};
   margin-top: 25px;
   padding: 30px;
   flex-direction: column;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const P1Styled = styled(P1)`
@@ -105,4 +115,11 @@ const ActionContainer = styled.div`
   width: 80%;
   margin-top: 30px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;

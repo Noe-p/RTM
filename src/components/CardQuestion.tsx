@@ -31,21 +31,40 @@ const Main = styled.div`
   justify-content: center;
   width: 80%;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 90%;
+  }
 `;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 70%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const LeftImage = styled.img`
   width: 350px;
   height: 50%;
   margin-right: 50px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    margin-right: 0;
+  }
 `;
 
 const RightImage = styled.img`
   width: 350px;
   height: 50%;
   margin-left: 50px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    margin-left: 0;
+  }
 `;

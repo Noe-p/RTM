@@ -5,63 +5,65 @@ import { H1, P1 } from './Typos';
 export function SecondBanner(): JSX.Element {
   return (
     <SecondBannerStyled>
-      <div>
-        <P1Styled color={COLORS.ORANGE}>Un peu de culture</P1Styled>
-        <H1Styled>Qu'est-ce que le don de moelle osseuse ?</H1Styled>
-        <ExplicationsStyled>
-          <ExplicationStyled>
-            <ImageStyled
-              alt={'moelle'}
-              src={'/assets/moelle-osseuse1.jpg'}
-            ></ImageStyled>
-            <P1Block>
-              Chaque année,{' '}
-              <P1StyledInline color={COLORS.ORANGE}>
-                plus de 2 000 personnes
-              </P1StyledInline>{' '}
-              ont besoin dun don de moelle osseuse pour guérir une maladie grave
-              du sang.
-            </P1Block>
-          </ExplicationStyled>
-          <ExplicationStyled>
-            <ImageStyled alt={'moelle'} src={'/assets/os.jpg'}></ImageStyled>
-            <P1Block>
-              La moelle osseuse (ne pas confondre avec moelle épinière) est une{' '}
-              <P1StyledInline color={COLORS.ORANGE}>
-                substance spongieuse située au milieu des os
-              </P1StyledInline>
-              .
-            </P1Block>
-          </ExplicationStyled>
-          <ExplicationStyled>
-            <ImageStyled
-              alt={'moelle'}
-              src={'/assets/seringue.jpg'}
-            ></ImageStyled>
-            <P1Block>
-              Le prélèvement est dans 80% des cas pratiqué{' '}
-              <P1StyledInline color={COLORS.ORANGE}>
-                sans chirurgie
-              </P1StyledInline>
-              , en ambulatoire (prélèvement de sang) mais peut aussi être
-              effectué en anesthésie générale.
-            </P1Block>
-          </ExplicationStyled>
-        </ExplicationsStyled>
-      </div>
+      <P1Styled color={COLORS.ORANGE}>Un peu de culture</P1Styled>
+      <H1Styled>Qu'est-ce que le don de moelle osseuse ?</H1Styled>
+      <ExplicationsStyled>
+        <ExplicationStyled>
+          <ImageStyled
+            alt={'moelle'}
+            src={'/assets/moelle-osseuse1.jpg'}
+          ></ImageStyled>
+          <P1Block>
+            Chaque année,{' '}
+            <P1StyledInline color={COLORS.ORANGE}>
+              plus de 2 000 personnes
+            </P1StyledInline>{' '}
+            ont besoin dun don de moelle osseuse pour guérir une maladie grave
+            du sang.
+          </P1Block>
+        </ExplicationStyled>
+        <ExplicationStyled>
+          <ImageStyled alt={'moelle'} src={'/assets/os.jpg'}></ImageStyled>
+          <P1Block>
+            La moelle osseuse (ne pas confondre avec moelle épinière) est une{' '}
+            <P1StyledInline color={COLORS.ORANGE}>
+              substance spongieuse située au milieu des os
+            </P1StyledInline>
+            .
+          </P1Block>
+        </ExplicationStyled>
+        <ExplicationStyled>
+          <ImageStyled
+            alt={'moelle'}
+            src={'/assets/seringue.jpg'}
+          ></ImageStyled>
+          <P1Block>
+            Le prélèvement est dans 80% des cas pratiqué{' '}
+            <P1StyledInline color={COLORS.ORANGE}>
+              sans chirurgie
+            </P1StyledInline>
+            , en ambulatoire (prélèvement de sang) mais peut aussi être effectué
+            en anesthésie générale.
+          </P1Block>
+        </ExplicationStyled>
+      </ExplicationsStyled>
     </SecondBannerStyled>
   );
 }
 
 const SecondBannerStyled = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
-  height: 672px;
   text-align: center;
+  flex-direction: column;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const P1Styled = styled(P1)`
@@ -86,15 +88,27 @@ const H1Styled = styled(H1)`
 `;
 
 const ExplicationsStyled = styled.div`
-  width: 85%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const ExplicationStyled = styled.div`
-  width: 30%;
+  width: 200px;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    margin-top: 20px;
+  }
 `;
 
 const ImageStyled = styled.img`
