@@ -2,14 +2,14 @@ import apiFetch from '@wordpress/api-fetch';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
-import { Button } from '../components/Button';
-import { Layout } from '../components/Layout';
-import { H1, H2, P1 } from '../components/Typos';
-import { COLORS } from '../styles/constantes';
-import { POST_URL, ROOT_URL } from '../wordpress';
+import { Button } from '../../components/Button';
+import { Layout } from '../../components/Layout';
+import { H1, H2, P1 } from '../../components/Typos';
+import { COLORS } from '../../styles/constantes';
+import { POST_URL, ROOT_URL } from '../../wordpress';
 
-export function Adherents(): JSX.Element {
-  const [adherents, setAdherents] = useState<WP_REST_API_Posts>([]);
+export function Partenaires(): JSX.Element {
+  const [partenaires, setPartenaires] = useState<WP_REST_API_Posts>([]);
 
   function getFirstImage(content: string) {
     const regex = /<img[^>]+src="?([^"\s]+)"?[^>]*>/g;
@@ -26,7 +26,7 @@ export function Adherents(): JSX.Element {
         const adherentsPost = posts.filter((post: WP_REST_API_Post) => {
           return post.categories?.includes(9);
         });
-        setAdherents(adherentsPost as WP_REST_API_Posts);
+        setPartenaires(adherentsPost as WP_REST_API_Posts);
       });
   }
 
@@ -44,9 +44,9 @@ export function Adherents(): JSX.Element {
     <Layout>
       <Main>
         <P1Styled>Ils font bouger les choses</P1Styled>
-        <H1Styled>Découvrez nos adhérents</H1Styled>
+        <H1Styled>Découvrez nos partenaires</H1Styled>
         <Button text='Devenir adhérent' />
-        {adherents.map((adherent) => {
+        {partenaires.map((adherent) => {
           return (
             <AdherentCard key={adherent.id}>
               <ImageStyled

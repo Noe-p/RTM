@@ -52,12 +52,6 @@ export function Header(props: HeaderProps): JSX.Element {
               Qui sommes-nous ?
             </P1Styled>
           </Link>
-          <Link to='/adherents'>
-            <ButtonStyled
-              text='Les adhérents'
-              $currentPage={currentPage === 'adherents'}
-            />
-          </Link>
         </Nav>
       ) : (
         <Nav>
@@ -82,11 +76,6 @@ export function Header(props: HeaderProps): JSX.Element {
             <Link to='/qui-sommes-nous'>
               <MenuLink $selected={currentPage === 'qui-sommes-nous'}>
                 Qui sommes-nous ?
-              </MenuLink>
-            </Link>
-            <Link to='/adherents'>
-              <MenuLink $selected={currentPage === 'adherents'}>
-                Les adhérents
               </MenuLink>
             </Link>
           </Menu>

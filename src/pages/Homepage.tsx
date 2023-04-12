@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ActionSection } from '../components/ActionSection';
 import { Button } from '../components/Button';
@@ -32,7 +33,9 @@ export function Homepage(props: HomepageProps): JSX.Element {
               osseuse de manière ludique et festive
             </P1Styled>
           </Caption>
-          <ButtonStyled text='Nous soutenir'></ButtonStyled>
+          <LinkStyled to='/nous-soutenir'>
+            <ButtonStyled text='Nous soutenir'></ButtonStyled>
+          </LinkStyled>
         </Banner>
         <SecondBanner />
         <ActionSection />
@@ -107,4 +110,8 @@ const ButtonStyled = styled(Button)`
   margin: auto;
   left: 0;
   right: 0;
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
 `;

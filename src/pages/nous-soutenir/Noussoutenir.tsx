@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button } from '../components/Button';
-import { CardSoutenir } from '../components/CardSoutenir';
-import { Layout } from '../components/Layout';
-import { H1, P1 } from '../components/Typos';
-import { COLORS } from '../styles/constantes';
+import { Button } from '../../components/Button';
+import { CardSoutenir } from '../../components/CardSoutenir';
+import { Layout } from '../../components/Layout';
+import { H1, P1 } from '../../components/Typos';
+import { COLORS } from '../../styles/constantes';
 
 export function NousSoutenir(): JSX.Element {
   return (
@@ -28,18 +28,26 @@ export function NousSoutenir(): JSX.Element {
           <P1Styled>En acceptant d’être donneur de vie :</P1Styled>
           <ul>
             <li>
-              <P1Styled>Vous donner une chance à un patient de pouvoir guérir de sa maladie.</P1Styled>
+              <P1Styled>
+                Vous donner une chance à un patient de pouvoir guérir de sa
+                maladie.
+              </P1Styled>
             </li>
             <li>
-              <P1Styled> Vous lui donnez une chance de pouvoir revivre normalement</P1Styled>
+              <P1Styled>
+                {' '}
+                Vous lui donnez une chance de pouvoir revivre normalement
+              </P1Styled>
             </li>
             <li>
-              <P1Styled>Vous pouvez changer sa vie, celle de sa famille, et la votre.</P1Styled>
+              <P1Styled>
+                Vous pouvez changer sa vie, celle de sa famille, et la votre.
+              </P1Styled>
             </li>
           </ul>
           <P1Styled>
-            Le don est un acte de bravoure et de bonté.
-            N’attendez plus et  inscrivez-vous !
+            Le don est un acte de bravoure et de bonté. N’attendez plus et
+            inscrivez-vous !
           </P1Styled>
         </>
         <ButtonStyled text='Devenir donneur sur dondemoelleosseuse.fr' />
@@ -50,13 +58,17 @@ export function NousSoutenir(): JSX.Element {
       >
         <>
           <P1Styled>
-            Tout le monde peut faire un don à Réveille Ta Moelle ! 
+            Tout le monde peut faire un don à Réveille Ta Moelle !
           </P1Styled>
           <P1Styled>
-            Il n’y a pas de petits dons , il n’y a que de grandes participations ! Nous avons besoins de vous pour faire avancer l’association et faire connaître au mieux le don de moelle osseuse.
+            Il n’y a pas de petits dons , il n’y a que de grandes participations
+            ! Nous avons besoins de vous pour faire avancer l’association et
+            faire connaître au mieux le don de moelle osseuse.
           </P1Styled>
         </>
-        <ButtonStyled text='Faire un don' />
+        <LinkStyled to='/nous-soutenir/don'>
+          <ButtonStyled text='Faire un don' />
+        </LinkStyled>
       </CardSoutenir>
       <CardSoutenir
         title='Qu’est-ce qu’un bénévole ?'
@@ -81,8 +93,8 @@ export function NousSoutenir(): JSX.Element {
             </li>
           </ul>
         </>
-        <LinkStyled to='/benevoles'>
-          <ButtonStyled text='Devenez bénévole'/>
+        <LinkStyled to='/nous-soutenir/benevole'>
+          <ButtonStyled text='Devenez bénévole' />
         </LinkStyled>
       </CardSoutenir>
       <CardSoutenir
@@ -91,34 +103,41 @@ export function NousSoutenir(): JSX.Element {
       >
         <>
           <P1Styled>
-            Vous êtes acteur local et sensible à la cause du don de moelle osseuse ?
+            Vous êtes acteur local et sensible à la cause du don de moelle
+            osseuse ?
           </P1Styled>
           <P1Styled>{'-> Soyons partenaires ! '}</P1Styled>
           <P1Styled>
-            Forts d’une équipe diversifiée et d’une association originale, nous attestons d’une forte implication de nos partenaires actuels :  
+            Forts d’une équipe diversifiée et d’une association originale, nous
+            attestons d’une forte implication de nos partenaires actuels : 
           </P1Styled>
           <P1Styled>
-            L’EFS de Rennes, l’Agence de la Biomédecine et bien d’autres !          
+            L’EFS de Rennes, l’Agence de la Biomédecine et bien d’autres !
           </P1Styled>
           <P1Styled>
-            Nous tenons à vous remercier sincèrement car notre projet ne pourrait pas avoir lieu sans vous !
+            Nous tenons à vous remercier sincèrement car notre projet ne
+            pourrait pas avoir lieu sans vous !
           </P1Styled>
         </>
-        <ButtonStyled text='Devenir partenaire' />
+        <LinkStyled to='/nous-soutenir/partenaire'>
+          <ButtonStyled text='Devenir partenaire' />
+        </LinkStyled>
       </CardSoutenir>
       <CardSoutenir
         title='Qu’est-ce qu’un adhérent ?'
         rightImage='/assets/page1/Group5.png'
       >
         <>
+          <P1Styled>Tout le monde peut être adhérent !</P1Styled>
           <P1Styled>
-            Tout le monde peut être adhérent !           
-          </P1Styled>
-          <P1Styled>
-            En le devenant, vous faites partie de l’aventure, vous soutenez le projet par votre motivation et votre partage sur les réseaux sociaux.          
+            En le devenant, vous faites partie de l’aventure, vous soutenez le
+            projet par votre motivation et votre partage sur les réseaux
+            sociaux.
           </P1Styled>
         </>
-        <ButtonStyled text='Devenir adhérent' />
+        <LinkStyled to='/nous-soutenir/adherent'>
+          <ButtonStyled text='Devenir adhérent' />
+        </LinkStyled>
       </CardSoutenir>
     </Layout>
   );

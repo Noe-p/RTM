@@ -1,5 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
 import { COLORS } from '../styles/constantes';
@@ -73,7 +74,9 @@ export function SectionAction(props: SectionActionProps): JSX.Element {
           />
         ))}
       </ActionContainer>
-      <Button text='Toutes nos actions' />
+      <LinkStyled to='/actions'>
+        <Button text='Toutes nos actions' />
+      </LinkStyled>
     </Main>
   );
 }
@@ -122,4 +125,8 @@ const ActionContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
 `;

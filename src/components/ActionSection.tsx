@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ActionBlock } from './ActionBlock';
 import { Button } from './Button';
@@ -8,7 +9,9 @@ export function ActionSection(): JSX.Element {
       <ActionBlock />
       <Buttons>
         <ButtonStyled text='En savoir plus ?' isWhite arrow={false} />
-        <ButtonStyled text='Nous soutenir' />
+        <LinkStyled to='/nous-soutenir'>
+          <ButtonStyled text='Nous soutenir' />
+        </LinkStyled>
       </Buttons>
     </ActionSectionStyled>
   );
@@ -34,4 +37,8 @@ const Buttons = styled.div`
 
 const ButtonStyled = styled(Button)`
   margin: 0 10px;
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
 `;

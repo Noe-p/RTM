@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from './Button';
 import { H2, P1 } from './Typos';
@@ -18,7 +19,9 @@ export function SectionAdherent(props: SectionAdherentProps): JSX.Element {
       </P1>
       <ImageAdherent alt='img-adherents' src='/assets/adherent-img.png' />
       <ButtonContainer>
-        <ButtonStyled text='Découvrir nos adhérents' />
+        <LinkStyled to='/qui-sommes-nous/adherents'>
+          <ButtonStyled text='Découvrir nos adhérents' />
+        </LinkStyled>
       </ButtonContainer>
     </SectionAdherentStyled>
   );
@@ -54,4 +57,8 @@ const ImageAdherent = styled.img`
   @media (max-width: 768px) {
     width: 90%;
   }
-`
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+`;
