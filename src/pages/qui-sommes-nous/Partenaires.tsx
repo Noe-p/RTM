@@ -2,7 +2,6 @@ import apiFetch from '@wordpress/api-fetch';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
-import { Button } from '../../components/Button';
 import { Layout } from '../../components/Layout';
 import { H1, H2, P1 } from '../../components/Typos';
 import { COLORS } from '../../styles/constantes';
@@ -24,7 +23,7 @@ export function Partenaires(): JSX.Element {
       .then((response) => response.json())
       .then((posts) => {
         const adherentsPost = posts.filter((post: WP_REST_API_Post) => {
-          return post.categories?.includes(9);
+          return post.categories?.includes(11);
         });
         setPartenaires(adherentsPost as WP_REST_API_Posts);
       });
@@ -43,9 +42,12 @@ export function Partenaires(): JSX.Element {
   return (
     <Layout>
       <Main>
-        <P1Styled>Ils font bouger les choses</P1Styled>
+        <P1Styled>Ils nous soutiennent</P1Styled>
         <H1Styled>Découvrez nos partenaires</H1Styled>
-        <Button text='Devenir adhérent' />
+        <Description>
+          Notre projet n’aurait pas pu voir le jour sans l’implication et le
+          soutien de nos partenaires
+        </Description>
         {partenaires.map((adherent) => {
           return (
             <AdherentCard key={adherent.id}>
@@ -83,6 +85,13 @@ const Main = styled.div`
 const H1Styled = styled(H1)`
   text-transform: uppercase;
   margin-top: 0;
+`;
+
+const Description = styled(P1)`
+  margin-top: 0;
+  margin-bottom: 30px;
+  width: 70%;
+  text-align: center;
 `;
 
 const P1Styled = styled(P1)`
