@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLORS } from '../styles/constantes';
-import { Button } from './Button';
 import { H1, P1 } from './Typos';
 
 interface HeaderProps {
@@ -144,11 +143,6 @@ const P1Styled = styled(P1)<{ $currentPage?: boolean }>`
       width: 100%;
     }
   }
-`;
-
-const ButtonStyled = styled(Button)<{ $currentPage?: boolean }>`
-  background-color: ${({ $currentPage }) =>
-    $currentPage ? COLORS.BLUE : COLORS.ORANGE};
 `;
 
 const Menu = styled.div<{ $isOpen: boolean }>`
