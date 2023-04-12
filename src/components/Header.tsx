@@ -43,7 +43,9 @@ export function Header(props: HeaderProps): JSX.Element {
             onMouseLeave={() => setIsSoutenirOpen(false)}
           >
             <Link to='/nous-soutenir'>
-              <P1Styled $currentPage={currentPage === 'nous-soutenir'}>
+              <P1Styled
+                $currentPage={currentPage === 'nous-soutenir' || isSoutenirOpen}
+              >
                 Nous soutenir
               </P1Styled>
             </Link>
@@ -53,7 +55,7 @@ export function Header(props: HeaderProps): JSX.Element {
               onMouseLeave={() => setIsSoutenirOpen(false)}
             >
               <LinkStyled to='/nous-soutenir/don'>
-                <DropdownLink>Don</DropdownLink>
+                <DropdownLink className='first-p'>Don</DropdownLink>
               </LinkStyled>
               <LinkStyled to='/nous-soutenir/benevole'>
                 <DropdownLink>Bénévoles</DropdownLink>
@@ -77,7 +79,11 @@ export function Header(props: HeaderProps): JSX.Element {
             onMouseLeave={() => setIsDropWhoOpen(false)}
           >
             <Link to='/qui-sommes-nous'>
-              <P1Styled $currentPage={currentPage === 'qui-sommes-nous'}>
+              <P1Styled
+                $currentPage={
+                  currentPage === 'qui-sommes-nous' || isDropWhoOpen
+                }
+              >
                 Qui sommes-nous ?
               </P1Styled>
             </Link>
@@ -87,7 +93,7 @@ export function Header(props: HeaderProps): JSX.Element {
               onMouseLeave={() => setIsDropWhoOpen(false)}
             >
               <LinkStyled to='/qui-sommes-nous/adherents'>
-                <DropdownLink>Nos adhérents</DropdownLink>
+                <DropdownLink className='first-p'>Nos adhérents</DropdownLink>
               </LinkStyled>
               <LinkStyled to='/qui-sommes-nous/partenaires'>
                 <DropdownLink>Nos partenaires</DropdownLink>
@@ -242,11 +248,15 @@ const DropdownContainer = styled.div<{ $isOpen: boolean }>`
   height: ${(props) => (props.$isOpen ? 'auto' : '0%')};
   transition: all 0.3s;
   overflow: hidden;
-  top: 150%;
+  top: 100%;
   margin: 0;
   padding: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
+  .first-p {
+    border-top: none;
+  }
 `;
 
 const DropdownLink = styled(P1)`
