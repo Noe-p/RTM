@@ -54,6 +54,7 @@ const FooterStyled = styled.div`
   color: white;
   justify-content: space-around;
   width: 100vw;
+  margin-top: 100px;
 
   @media (max-width: 768px) {
     flex-direction: column;
