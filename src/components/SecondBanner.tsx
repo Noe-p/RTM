@@ -97,7 +97,7 @@ const ExplicationsStyled = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin: auto;
   flex-wrap: wrap;
 
@@ -117,6 +117,10 @@ const ExplicationStyled = styled.div`
 `;
 
 const ImageStyled = styled.img`
-  width: 15%;
+  width: 50%;
   justify-content: center;
+  @media (max-width: 768px) {
+    width: 20%;
+    margin-top: 20px;
+  }
 `;

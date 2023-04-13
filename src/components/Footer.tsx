@@ -45,8 +45,8 @@ export function Footer(): JSX.Element {
 }
 
 const FooterStyled = styled.div`
-  margin-top: 50px;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
