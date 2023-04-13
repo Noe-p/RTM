@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
 import { Layout } from '../../components/Layout';
 import { H1, H2, P1 } from '../../components/Typos';
+import { adherentsFixture } from '../../fixtures';
 import { COLORS } from '../../styles/constantes';
 import { POST_URL, ROOT_URL } from '../../wordpress';
 
@@ -26,6 +27,9 @@ export function Adherents(): JSX.Element {
           return post.categories?.includes(9);
         });
         setAdherents(adherentsPost as WP_REST_API_Posts);
+      })
+      .catch((error) => {
+        setAdherents(adherentsFixture as WP_REST_API_Posts);
       });
   }
 
@@ -109,6 +113,7 @@ const ImageStyled = styled.img`
   height: 200px;
   border-radius: 50%;
   margin-right: 50px;
+  object-fit: cover;
 `;
 
 const TextContainer = styled.div`

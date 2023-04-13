@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
+import { ActionFixture } from '../fixtures';
 import { COLORS } from '../styles/constantes';
 import { POST_URL, ROOT_URL } from '../wordpress';
 import { ActionCard } from './ActionCard';
@@ -41,7 +42,9 @@ export function SectionAction(props: SectionActionProps): JSX.Element {
           return post.categories?.includes(10);
         });
         setPosts(actionPosts as WP_REST_API_Posts);
-        console.log('SectionAction', posts);
+      })
+      .catch((error) => {
+        setPosts(ActionFixture as WP_REST_API_Posts);
       });
   }
 
