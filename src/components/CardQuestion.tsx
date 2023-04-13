@@ -33,11 +33,10 @@ const Main = styled.div`
   margin-top: 50px;
   @media (max-width: 768px) {
     width: 90%;
-    flex-direction: ${LeftImage => (LeftImage ? 'column' : 'column-reverse')};
+    flex-direction: ${(LeftImage) => (LeftImage ? 'column' : 'column-reverse')};
     align-items: center;
     margin: 5%;
   }
-  
 `;
 const Container = styled.div`
   display: flex;

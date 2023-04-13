@@ -24,8 +24,8 @@ export function SecondBanner(): JSX.Element {
             </P1Block>
           </ExplicationStyled>
           <ExplicationStyled>
-            <ImageStyled 
-              alt={'moelle'} 
+            <ImageStyled
+              alt={'moelle'}
               src={'/assets/icons/icon2.png'}
             ></ImageStyled>
             <P1Block>
@@ -93,7 +93,7 @@ const H1Styled = styled(H1)`
 `;
 
 const ExplicationsStyled = styled.div`
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -108,7 +108,7 @@ const ExplicationsStyled = styled.div`
 `;
 
 const ExplicationStyled = styled.div`
-  width: 200px;
+  width: 30%;
 
   @media (max-width: 768px) {
     width: 95%;

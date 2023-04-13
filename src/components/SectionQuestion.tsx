@@ -75,7 +75,6 @@ const Main = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: ${COLORS.GREY};
   margin-top: 50px;
   flex-direction: column;
 `;

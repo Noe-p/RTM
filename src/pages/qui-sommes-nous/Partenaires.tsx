@@ -120,6 +120,7 @@ const ImageStyled = styled.img`
   height: 200px;
   border-radius: 50%;
   margin-right: 50px;
+  object-fit: cover;
 `;
 
 const TextContainer = styled.div`

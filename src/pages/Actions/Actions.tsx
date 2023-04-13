@@ -111,14 +111,15 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   width: 90%;
+  height: 100%;
 `;
 
 const CardContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 `;
 
 const Title = styled(H1)`

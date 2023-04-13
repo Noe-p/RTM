@@ -46,6 +46,7 @@ const Main = styled.div`
   cursor: pointer;
   overflow: hidden;
   border-radius: 10px;
+  height: max-content;
 `;
 
 const Description = styled.div<{ $isWhite?: boolean }>`
@@ -56,7 +57,7 @@ const Description = styled.div<{ $isWhite?: boolean }>`
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  height: 100%;
+  height: max-content;
   background-color: ${({ $isWhite }) => $isWhite && COLORS.WHITE};
 `;
 

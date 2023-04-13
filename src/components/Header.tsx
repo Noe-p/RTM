@@ -147,6 +147,7 @@ const Main = styled.div`
   font-family: 'Inter', sans-serif;
   position: fixed;
   top: 0;
+
   img {
     width: 30px;
     margin: 20px;
@@ -165,7 +166,6 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  margin-right: 20px;
   a {
     text-decoration: none;
     margin: 0 20px;
@@ -267,6 +267,11 @@ const DropdownLink = styled(P1)`
   cursor: pointer;
   padding: 10px 0px;
   margin: 0;
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    opacity: 1;
+  }
 `;
 
 const LinkStyled = styled(Link)`

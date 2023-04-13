@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ActionBlock } from './ActionBlock';
 import { Button } from './Button';
@@ -8,9 +7,12 @@ export function ActionSection(): JSX.Element {
     <ActionSectionStyled>
       <ActionBlock />
       <Buttons>
-        <ButtonStyled text='En savoir plus ?' isWhite arrow={false} />
-        <LinkStyled to='/nous-soutenir'>
-          <ButtonStyled text='Nous soutenir' />
+        <LinkStyled target='_blank' href='https://dondemoelleosseuse.fr'>
+          <ButtonStyled
+            text='En savoir plus sur dondemoelleosseuse.fr'
+            isWhite
+            arrow={false}
+          />
         </LinkStyled>
       </Buttons>
     </ActionSectionStyled>
@@ -39,6 +41,6 @@ const ButtonStyled = styled(Button)`
   margin: 0 10px;
 `;
 
-const LinkStyled = styled(Link)`
+const LinkStyled = styled.a`
   text-decoration: none;
 `;
