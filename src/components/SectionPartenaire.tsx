@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
+import { partenaireFixture } from '../fixtures';
 import { POST_URL, ROOT_URL } from '../wordpress';
 import { Button } from './Button';
 import { H2, P1 } from './Typos';
@@ -36,6 +37,9 @@ export function SectionPartenaire(props: SectionPartenaireProps): JSX.Element {
           return post.categories?.includes(11);
         });
         setPartenaire(actionPosts as WP_REST_API_Posts);
+      })
+      .catch((error) => {
+        setPartenaire(partenaireFixture as WP_REST_API_Posts);
       });
   }
 

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
 import { Layout } from '../../components/Layout';
 import { H1, H2, P1 } from '../../components/Typos';
+import { partenaireFixture } from '../../fixtures';
 import { COLORS } from '../../styles/constantes';
 import { POST_URL, ROOT_URL } from '../../wordpress';
 
@@ -26,6 +27,9 @@ export function Partenaires(): JSX.Element {
           return post.categories?.includes(11);
         });
         setPartenaires(adherentsPost as WP_REST_API_Posts);
+      })
+      .catch((error) => {
+        setPartenaires(partenaireFixture as WP_REST_API_Posts);
       });
   }
 
@@ -48,7 +52,7 @@ export function Partenaires(): JSX.Element {
           Notre projet n’aurait pas pu voir le jour sans l’implication et le
           soutien de nos partenaires
         </Description>
-        {partenaires.map((adherent) => {
+        {partenaires.map((adherent, index) => {
           return (
             <AdherentCard key={adherent.id}>
               <ImageStyled

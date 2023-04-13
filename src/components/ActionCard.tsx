@@ -56,6 +56,7 @@ const Description = styled.div<{ $isWhite?: boolean }>`
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  height: 100%;
   background-color: ${({ $isWhite }) => $isWhite && COLORS.WHITE};
 `;
 

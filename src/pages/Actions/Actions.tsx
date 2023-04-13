@@ -5,6 +5,7 @@ import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
 import { ActionCard } from '../../components/ActionCard';
 import { Layout } from '../../components/Layout';
 import { H1, H2, H3 } from '../../components/Typos';
+import { ActionFixture } from '../../fixtures';
 import { POST_URL, ROOT_URL } from '../../wordpress';
 
 interface ActionsProps {
@@ -39,6 +40,9 @@ export function Actions(props: ActionsProps): JSX.Element {
           return post.categories?.includes(10);
         });
         setPosts(actionPosts as WP_REST_API_Posts);
+      })
+      .catch((error) => {
+        setPosts(ActionFixture as WP_REST_API_Posts);
       });
   }
 
