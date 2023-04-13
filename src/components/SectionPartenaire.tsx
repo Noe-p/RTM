@@ -19,6 +19,7 @@ interface SectionPartenaireProps {
 export function SectionPartenaire(props: SectionPartenaireProps): JSX.Element {
   const { className } = props;
   const [partenaire, setPartenaire] = useState<WP_REST_API_Posts>([]);
+  const [isMobile, setIsMobile] = useState(false);
   SwiperCore.use([Autoplay]);
 
   function getFirstImage(content: string) {
@@ -123,4 +124,7 @@ const ImagePartenaire = styled.img`
   width: 300px;
   height: 200px;
   object-fit: contain;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
