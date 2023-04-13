@@ -41,6 +41,7 @@ export function SectionAction(props: SectionActionProps): JSX.Element {
           return post.categories?.includes(10);
         });
         setPosts(actionPosts as WP_REST_API_Posts);
+        console.log('SectionAction', posts);
       });
   }
 

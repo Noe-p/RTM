@@ -2,7 +2,6 @@ import apiFetch from '@wordpress/api-fetch';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { WP_REST_API_Post, WP_REST_API_Posts } from 'wp-types';
-import { Button } from '../../components/Button';
 import { Layout } from '../../components/Layout';
 import { H1, H2, P1 } from '../../components/Typos';
 import { COLORS } from '../../styles/constantes';
@@ -45,7 +44,10 @@ export function Adherents(): JSX.Element {
       <Main>
         <P1Styled>Ils font bouger les choses</P1Styled>
         <H1Styled>Découvrez nos adhérents</H1Styled>
-        <Button text='Devenir adhérent' />
+        <Description>
+          Ils font avancer le projet, aident l’association avec leur motivation,{' '}
+          <span>leur partage et leur talent.</span>
+        </Description>
         {adherents.map((adherent) => {
           return (
             <AdherentCard key={adherent.id}>
@@ -124,4 +126,15 @@ const DateStyled = styled(P1)`
   margin: 0;
   margin-bottom: 10px;
   font-style: italic;
+`;
+
+const Description = styled(P1)`
+  margin-top: 0;
+  margin-bottom: 30px;
+  width: 50%;
+  text-align: center;
+
+  span {
+    font-weight: bold;
+  }
 `;
