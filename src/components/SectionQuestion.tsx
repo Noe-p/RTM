@@ -14,7 +14,7 @@ export function SectionQuestion(props: SectionQuestionProps): JSX.Element {
 
   return (
     <Main className={className}>
-      <CardQuestion leftImage='/assets/page1/Group4.png' title='Nous soutenir'>
+      <CardQuestionStyled leftImage='/assets/page1/Group4.png' title='Nous soutenir'>
         <>
           <P1Styled>
             La greffe de moelle osseuse permet à des milliers de personnes de
@@ -29,33 +29,46 @@ export function SectionQuestion(props: SectionQuestionProps): JSX.Element {
             <ButtonStyled text='Nous soutenir' />
           </LinkStyled>
         </>
-      </CardQuestion>
-      <CardQuestion
-        title='Qui sommes-nous ?'
-        rightImage='/assets/page1/Group2.png'
-      >
-        <>
-          <P1Styled>
-            Réveille Ta Moelle a une volonté : construire des rencontres simples
-            et de proximité autour du don de moelle osseuse.{' '}
-          </P1Styled>
-          <P1Styled>
-            Ce don représente le seul espoir de guérison pour de nombreuses
-            personnes en attente de greffe.
-          </P1Styled>
-          <P1Styled>
-            Notre objectif est de faire découvrir et parler de cette cause
-            différemment, en organisant des événements qui associent
-            l'information à l'art et la musique électronique.
-          </P1Styled>
-          <LinkStyled to='/qui-sommes-nous'>
-            <ButtonStyled text='Qui sommes-nous ?' />
-          </LinkStyled>
-        </>
-      </CardQuestion>
+      </CardQuestionStyled>
+      <CardContainer>
+        <CardQuestionStyled
+          title='Qui sommes-nous ?'
+          rightImage='/assets/page1/Group2.png'
+        >
+          <>
+            <P1Styled>
+              Réveille Ta Moelle a une volonté : construire des rencontres simples
+              et de proximité autour du don de moelle osseuse.{' '}
+            </P1Styled>
+            <P1Styled>
+              Ce don représente le seul espoir de guérison pour de nombreuses
+              personnes en attente de greffe.
+            </P1Styled>
+            <P1Styled>
+              Notre objectif est de faire découvrir et parler de cette cause
+              différemment, en organisant des événements qui associent
+              l'information à l'art et la musique électronique.
+            </P1Styled>
+            <LinkStyled to='/qui-sommes-nous'>
+              <ButtonStyled text='Qui sommes-nous ?' />
+            </LinkStyled>
+          </>
+        </CardQuestionStyled>
+      </CardContainer>
     </Main>
   );
 }
+
+
+const CardContainer = styled.div`
+  background-color: ${COLORS.WHITE};
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: center;
+  img{
+    height: 100%;
+  }
+`;
 
 const Main = styled.div`
   display: flex;
@@ -65,7 +78,6 @@ const Main = styled.div`
   background-color: ${COLORS.GREY};
   margin-top: 50px;
   flex-direction: column;
-  padding-bottom: 50px;
 `;
 
 const P1Styled = styled(P1)`
@@ -79,4 +91,8 @@ const ButtonStyled = styled(Button)`
 
 const LinkStyled = styled(Link)`
   text-decoration: none;
+`;
+
+const CardQuestionStyled = styled(CardQuestion)`
+  padding-bottom: 20px;
 `;

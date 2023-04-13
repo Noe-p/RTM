@@ -26,9 +26,10 @@ export function Homepage(props: HomepageProps): JSX.Element {
             className={'ImageBanner'}
             src='/assets/page1/Rectangle 9.jpg'
             alt='banner'
+            width={50}
           />
           <Caption>
-            <H1Styled>REVEILLE TA MOËLLE</H1Styled>
+            <H1Styled>REVEILLE TA MOELLE</H1Styled>
             <P1Styled>
               Information, sensibilisation et invitation au don de moelle
               osseuse de manière ludique et festive
