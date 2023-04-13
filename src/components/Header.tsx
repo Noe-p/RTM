@@ -14,6 +14,8 @@ export function Header(props: HeaderProps): JSX.Element {
   const { currentPage } = props;
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropWhoOpen, setIsDropWhoOpen] = useState(false);
+  const [isSoutenirOpen, setIsSoutenirOpen] = useState(false);
 
   function handleResize() {
     if (window.innerWidth < 768) {
@@ -36,21 +38,71 @@ export function Header(props: HeaderProps): JSX.Element {
           <Link to='/'>
             <P1Styled $currentPage={currentPage === ''}>Accueil</P1Styled>
           </Link>
-          <Link to='/nous-soutenir'>
-            <P1Styled $currentPage={currentPage === 'nous-soutenir'}>
-              Nous soutenir
-            </P1Styled>
-          </Link>
+          <DropLink
+            onMouseOver={() => setIsSoutenirOpen(true)}
+            onMouseLeave={() => setIsSoutenirOpen(false)}
+          >
+            <Link to='/nous-soutenir'>
+              <P1Styled
+                $currentPage={currentPage === 'nous-soutenir' || isSoutenirOpen}
+              >
+                Nous soutenir
+              </P1Styled>
+            </Link>
+            <DropdownContainer
+              $isOpen={isSoutenirOpen}
+              onMouseOver={() => setIsSoutenirOpen(true)}
+              onMouseLeave={() => setIsSoutenirOpen(false)}
+            >
+              <LinkStyled to='/nous-soutenir/don'>
+                <DropdownLink className='first-p'>Don</DropdownLink>
+              </LinkStyled>
+              <LinkStyled to='/nous-soutenir/benevole'>
+                <DropdownLink>Bénévoles</DropdownLink>
+              </LinkStyled>
+              <LinkStyled to='/nous-soutenir/partenaire'>
+                <DropdownLink>Partenaires</DropdownLink>
+              </LinkStyled>
+              <LinkStyled to='/nous-soutenir/adherent'>
+                <DropdownLink>Adhérents</DropdownLink>
+              </LinkStyled>
+            </DropdownContainer>
+          </DropLink>
           <Link to='/actions'>
             <P1Styled $currentPage={currentPage === 'actions'}>
               Actions
             </P1Styled>
           </Link>
-          <Link to='/qui-sommes-nous'>
-            <P1Styled $currentPage={currentPage === 'qui-sommes-nous'}>
-              Qui sommes-nous ?
-            </P1Styled>
-          </Link>
+
+          <DropLink
+            onMouseOver={() => setIsDropWhoOpen(true)}
+            onMouseLeave={() => setIsDropWhoOpen(false)}
+          >
+            <Link to='/qui-sommes-nous'>
+              <P1Styled
+                $currentPage={
+                  currentPage === 'qui-sommes-nous' || isDropWhoOpen
+                }
+              >
+                Qui sommes-nous ?
+              </P1Styled>
+            </Link>
+            <DropdownContainer
+              $isOpen={isDropWhoOpen}
+              onMouseOver={() => setIsDropWhoOpen(true)}
+              onMouseLeave={() => setIsDropWhoOpen(false)}
+            >
+              <LinkStyled to='/qui-sommes-nous/adherents'>
+                <DropdownLink className='first-p'>Nos adhérents</DropdownLink>
+              </LinkStyled>
+              <LinkStyled to='/qui-sommes-nous/partenaires'>
+                <DropdownLink>Nos partenaires</DropdownLink>
+              </LinkStyled>
+              <LinkStyled to='/qui-sommes-nous/contact'>
+                <DropdownLink>Contact</DropdownLink>
+              </LinkStyled>
+            </DropdownContainer>
+          </DropLink>
         </Nav>
       ) : (
         <Nav>
@@ -113,6 +165,7 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: end;
   align-items: center;
+  margin-right: 20px;
   a {
     text-decoration: none;
     margin: 0 20px;
@@ -175,4 +228,48 @@ const MenuLink = styled(H1)<{ $selected?: boolean }>`
   @media (max-height: 500px) {
     transform: translateY(-20px);
   }
+`;
+
+const DropLink = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`;
+
+const DropdownContainer = styled.div<{ $isOpen: boolean }>`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${COLORS.BLUE};
+  height: ${(props) => (props.$isOpen ? 'auto' : '0%')};
+  transition: all 0.3s;
+  overflow: hidden;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  .first-p {
+    border-top: none;
+  }
+`;
+
+const DropdownLink = styled(P1)`
+  color: white;
+  border-top: 1px solid white;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 0px;
+  margin: 0;
+`;
+
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+  width: 100%;
 `;
