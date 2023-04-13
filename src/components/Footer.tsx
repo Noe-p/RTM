@@ -130,7 +130,7 @@ const SocialGroup = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
     justify-content: center;
     margin-top: 10px;
   }
